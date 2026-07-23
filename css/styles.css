@@ -385,57 +385,120 @@ ul {
     gap: 12px;
 }
 
-/* Language Selector / Google Translate */
-.lang-selector-wrapper {
+/* ============ CUSTOM GLASSMORPHIC LANGUAGE SELECTOR ============ */
+.custom-lang-selector {
     position: relative;
-    display: inline-flex;
-    align-items: center;
-}
-
-#google_translate_element {
     display: inline-block;
+    z-index: 100;
 }
 
-.goog-te-gadget {
-    font-family: var(--font-body) !important;
-    font-size: 0.85rem !important;
-    color: var(--text-secondary) !important;
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 30px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.goog-te-gadget-simple {
-    background: var(--glass-bg) !important;
-    border: 1px solid var(--glass-border) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
-    padding: 6px 12px !important;
-    border-radius: 30px !important;
-    font-size: 0.82rem !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 4px !important;
-    cursor: pointer !important;
-    transition: var(--transition) !important;
+.lang-btn:hover {
+    border-color: var(--accent-primary);
+    background: var(--glass-bg-hover);
+    box-shadow: 0 0 20px rgba(108, 99, 255, 0.3);
+    transform: translateY(-1px);
 }
 
-.goog-te-gadget-simple:hover {
-    border-color: var(--accent-primary) !important;
-    box-shadow: 0 0 15px rgba(108, 99, 255, 0.25) !important;
+.lang-btn svg {
+    color: var(--accent-primary);
+    flex-shrink: 0;
 }
 
-.goog-te-gadget-simple img {
-    display: none !important;
+.lang-btn .chevron-icon {
+    color: var(--text-tertiary);
+    transition: transform 0.3s ease;
 }
 
-.goog-te-menu-value {
-    margin: 0 !important;
-    color: var(--text-primary) !important;
-    display: inline-flex !important;
-    align-items: center !important;
+.custom-lang-selector.open .chevron-icon {
+    transform: rotate(180deg);
 }
 
-.goog-te-menu-value span {
-    color: var(--text-primary) !important;
-    border-left: none !important;
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 200px;
+    max-height: 320px;
+    overflow-y: auto;
+    background: var(--bg-secondary);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+}
+
+[data-theme="dark"] .lang-dropdown {
+    background: rgba(15, 15, 46, 0.95);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="light"] .lang-dropdown {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.custom-lang-selector.open .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.lang-option:hover {
+    background: var(--glass-bg-hover);
+    color: var(--accent-primary);
+    padding-left: 18px;
+}
+
+.lang-option.active {
+    background: var(--gradient-primary);
+    color: #ffffff !important;
+    font-weight: 600;
 }
 
 /* Hide Google Top Frame Banner when translating */

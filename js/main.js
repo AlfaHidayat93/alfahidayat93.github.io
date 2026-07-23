@@ -422,4 +422,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
     skillBars.forEach(bar => skillObserver.observe(bar));
 
+    // ============ CUSTOM GLASSMORPHIC LANGUAGE SELECTOR LOGIC ============
+    const langBtn = document.getElementById('langBtn');
+    const customLangSelector = document.getElementById('customLangSelector');
+    const currentLangText = document.getElementById('currentLangText');
+    const langOptions = document.querySelectorAll('.lang-option');
+
+    const getCookie = (name) => {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+    };
+
+    const currentCookie = getCookie('googtrans');
+    if (currentCookie) {
+        const langCode = currentCookie.split('/').pop();
+        const activeOption = document.querySelector(`.lang-option[data-lang="${langCode}"]`);
+        if (activeOption) {
+            langOptions.forEach(opt => opt.classList.remove('active'));
+            activeOption.classList.add('active');
+            currentLangText.textContent = activeOption.textContent.replace(/^[^\s]+\s*/, '');
+        }
+    }
+
+    if (langBtn && customLangSelector) {
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            customLangSelector.classList.toggle('open');
+        });
+
+        document.addEventListener('click', () => {
+            customLangSelector.classList.remove('open');
+        });
+
+        langOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const selectedLang = option.getAttribute('data-lang');
+                
+                langOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+                currentLangText.textContent = option.textContent.replace(/^[^\s]+\s*/, '');
+                customLangSelector.classList.remove('open');
+
+                if (selectedLang === 'en') {
+                    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
+                } else {
+                    document.cookie = "googtrans=/en/" + selectedLang + "; path=/;";
+                    document.cookie = "googtrans=/en/" + selectedLang + "; domain=" + location.hostname + "; path=/;";
+                }
+                location.reload();
+            });
+        });
+    }
+
 });
