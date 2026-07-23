@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark light">
+    <script>
+    {
+        const theme = localStorage.getItem('theme');
+        if (theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            document.querySelector('meta[name="color-scheme"]').content = theme === 'light' ? 'light' : 'dark';
+        }
+    }
+    </script>
+
+    <!-- SEO Meta Tags -->
+    <title>Alfa Hidayat — DJ · Web Developer · Digital Artist · Playwright & Theater Director · Indonesian Language Educator</title>
+    <meta name="description" content="Hi! I'm Alfa Hidayat, a creative professional specializing in music production (FL Studio), web development (Laravel), digital illustration, theater performance, and education (Bahasa Indonesia).">
+    <meta name="keywords" content="Alfa Hidayat, Alfa Raxiys, DJ, Web Developer, Laravel, Digital Artist, Playwright, Theater Director, Indonesian Educator, Portfolio, Procreate, FL Studio">
+    <meta name="author" content="Alfa Hidayat">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Alfa Hidayat — Multidisciplinary Creative Portfolio">
+    <meta property="og:description" content="DJ · Web Developer · Digital Artist · Playwright & Theater Director · Indonesian Language Educator — Let's collaborate and bring your ideas to life.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/hero_portrait.jpg">
+
+    <!-- Favicon (inline SVG data URI) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ============ PRELOADER ============ -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-spinner"></div>
+        <span class="preloader-text gradient-text">Alfa Hidayat</span>
+    </div>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav class="nav" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="nav-logo gradient-text">Alfa.</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="lang-selector-wrapper" aria-label="Translate Language">
+                    <div id="google_translate_element"></div>
+                </div>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero section" id="home">
+        <div class="container hero-container">
+            <div class="hero-content reveal">
+                <div class="status-pill">
+                    <span class="status-dot"></span>
+                    Available for Collaborations & Event Bookings
+                </div>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="gradient-text">Alfa Hidayat</span>
+                </h1>
+                <div class="hero-subtitle">
+                    <span class="typing-prefix">I'm a </span><span class="typing-text" id="typingText"></span><span class="typing-cursor">|</span>
+                </div>
+                <p class="hero-description">
+                    A creative professional with a passion for music, education, storytelling, tech, and art.
+                    Let's collaborate or bring your ideas to life!
+                </p>
+                <div class="hero-cta">
+                    <a href="#portfolio" class="btn btn-primary">
+                        Explore Works
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://github.com/alfahidayat" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://instagram.com/alfaraxiys" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="https://soundcloud.com/alfaraxiys" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M7 17.939h-1v-8.068c.308-.231.639-.429 1-.566v8.634zm-2 0h-1v-7.294c.308-.211.648-.389 1-.536v7.83zm-2 0h-1v-5.263c.196-.137.406-.257.634-.357l.366-.152v5.772zm-2 0h-1v-3.583c.258-.109.553-.207.852-.268l.148-.032v3.883zm14-8.939c-.148 0-.293.011-.438.024-.186-2.478-2.188-4.424-4.562-4.424-1.004 0-1.937.331-2.707.896l-.293.229v13.214h8c2.206 0 4-1.794 4-4s-1.794-4-4-4zm-8 8.939h-1v-8.891c.303-.257.625-.485 1-.665v9.556z"/></svg>
+                    </a>
+                    <a href="https://youtube.com/@alfaraxiys" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper reveal">
+                <div class="hero-card-orbit"></div>
+                <div class="hero-card">
+                    <!-- Gunakan .png dengan background transparan untuk hasil terbaik seperti contoh -->
+                    <img src="assets/images/hero_portrait.png" alt="Alfa Hidayat portrait" class="hero-card-img" onerror="this.onerror=null; this.src='assets/images/hero_portrait.jpg';" loading="eager">
+                </div>
+                <div class="hero-badge-left">
+                    <span class="badge-number"><span class="counter" data-target="12">0</span>+</span>
+                    <span class="badge-label">Years<br>Experience</span>
+                </div>
+                <div class="hero-badge-right" aria-label="Creative Tech">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT SECTION ============ -->
+    <section class="section about" id="about">
+        <div class="container">
+            <span class="section-subtitle">About Me</span>
+            <h2 class="section-title reveal">Get to Know Me</h2>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>
+                        I'm Alfa Hidayat — a multidisciplinary creative from Indonesia who thrives at the intersection
+                        of music, technology, art, performance, and education. With years of experience across
+                        five distinct creative fields, I bring a unique perspective to every project.
+                    </p>
+                    <p>
+                        Whether I'm spinning tracks at a packed venue, building sleek web experiences,
+                        crafting digital illustrations on Procreate, performing on stage, or teaching the
+                        next generation at vocational schools — I pour passion and precision into everything I do.
+                    </p>
+                    <div class="about-disciplines">
+                        <div class="discipline-item glass">
+                            <span class="discipline-icon">🎧</span>
+                            <span>DJ & Music</span>
+                        </div>
+                        <div class="discipline-item glass">
+                            <span class="discipline-icon">💻</span>
+                            <span>Web Dev</span>
+                        </div>
+                        <div class="discipline-item glass">
+                            <span class="discipline-icon">🎨</span>
+                            <span>Digital Art</span>
+                        </div>
+                        <div class="discipline-item glass">
+                            <span class="discipline-icon">🎭</span>
+                            <span>Acting</span>
+                        </div>
+                        <div class="discipline-item glass">
+                            <span class="discipline-icon">📚</span>
+                            <span>Education</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary download-cv">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download CV
+                    </a>
+                </div>
+                <div class="about-info-card glass reveal">
+                    <div class="about-info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div>
+                            <span class="info-label">Name</span>
+                            <span class="info-value">Alfa Hidayat</span>
+                        </div>
+                    </div>
+                    <div class="about-info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div>
+                            <span class="info-label">Email</span>
+                            <span class="info-value">taofan.alfa@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="about-info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div>
+                            <span class="info-label">Location</span>
+                            <span class="info-value">Indonesia</span>
+                        </div>
+                    </div>
+                    <div class="about-info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div>
+                            <span class="info-label">Availability</span>
+                            <span class="info-value" style="color: var(--accent-secondary);">Available for work</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SKILLS SECTION ============ -->
+    <section class="section" id="skills">
+        <div class="container">
+            <span class="section-subtitle">My Skills</span>
+            <h2 class="section-title reveal">Technologies & Tools I Work With</h2>
+            <div class="skills-grid">
+                <div class="skill-card glass reveal">
+                    <div class="skill-icon">🎵</div>
+                    <h3 class="skill-name">DJ Performance</h3>
+                    <span class="skill-category">Music Production</span>
+                    <div class="skill-bar"><div class="skill-bar-fill" style="--fill-width: 95%"></div></div>
+                </div>
+                <div class="skill-card glass reveal">
+                    <div class="skill-icon">
+                        <svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="FL Studio Logo">
+                          <defs>
+                            <linearGradient id="flGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#FF9E00"/>
+                              <stop offset="50%" stop-color="#FF5500"/>
+                              <stop offset="100%" stop-color="#D50000"/>
+                            </linearGradient>
+                            <linearGradient id="flLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#00E676"/>
+                              <stop offset="100%" stop-color="#00897B"/>
+                            </linearGradient>
+                          </defs>
+                          <path d="M38 4C38 4 45 10 39 19C33 19 31 13 38 4Z" fill="url(#flLeaf)"/>
+                          <path d="M29 6C29 6 21 12 27 20C33 18 33 12 29 6Z" fill="url(#flLeaf)"/>
+                          <path d="M32 15C21 15 11 25 11 39C11 52 20 59 32 59C44 59 53 52 53 39C53 25 43 15 32 15Z" fill="url(#flGrad)"/>
+                          <path d="M32 19C23 19 16 27 16 38C16 40 17 41 19 40C22 35 28 32 36 33C38 33.3 40 34 41 34C45 34 48 30 47 25C44 22 38 19 32 19Z" fill="#FFD54F" opacity="0.6"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">FL Studio</h3>
+                    <span class="skill-category">Music Production</span>
+                    <div class="skill-bar"><div class="skill-bar-fill" style="--fill-width: 85%"></div></div>
+                </div>
+                <div class="skill-card glass reveal">
+                    <div class="skill-icon">⚡</div>
+                    <h3 class="skill-name">HTML / CSS / JS</h3>
+                    <span class="skill-category">Web Development</span>
+                    <div class="skill-bar"><div class="skill-bar-fill" style="--fill-width: 90%"></div></div>
+                </div>
+                <div class="skill-card glass reveal">
+                    <div class="skill-icon">⚛️</div>
+                    <h3 class="skill-name">React & Next.js</h3>
+                    <span class="skill-category">Web Development</span>
+                    <div class="skill-bar"><div class="skill-bar-fill" style="--fill-width: 80%"></div></div>
+                </div>
+                <div class="skill-card glass reveal">
+                    <div class="skill-icon">🖌️</div>
+                    <h3 class="skill-name">Procreate</h3>
+                    <span class="skill-category">Digital Art</span>
+                    <div class="skill-bar"><div class="skill-bar-fill" style="--fill-width: 92%"></div></div>
+                </div>
+                <div class="skill-card glass reveal">
+                    <div class="skill-icon">
+                        <svg width="40" height="40" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Laravel Logo">
+                          <path fill="#FF2D20" d="M473.16 142.15l-192-110.85a48.11 48.11 0 0 0-48.32 0l-192 110.85a48 48 0 0 0-24 41.6v221.7a48 48 0 0 0 24 41.6l192 110.85a48.11 48.11 0 0 0 48.32 0l192-110.85a48 48 0 0 0 24-41.6V183.75a48 48 0 0 0-24-41.6zM244.84 466.83l-180.84-104.4v-208.8l180.84 104.4zm24-219.78L88 142.65l168-96.93 168 96.93zm180.84 115.38L268.84 466.83V257.05l180.84-104.4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="skill-name">Laravel</h3>
+                    <span class="skill-category">Web Development</span>
+                    <div class="skill-bar"><div class="skill-bar-fill" style="--fill-width: 85%"></div></div>
+                </div>
+                <div class="skill-card glass reveal">
+                    <div class="skill-icon">🎭</div>
+                    <h3 class="skill-name">Theater & Directing</h3>
+                    <span class="skill-category">Playwright, Director & Coach</span>
+                    <div class="skill-bar"><div class="skill-bar-fill" style="--fill-width: 88%"></div></div>
+                </div>
+                <div class="skill-card glass reveal">
+                    <div class="skill-icon">📚</div>
+                    <h3 class="skill-name">Indonesian Language</h3>
+                    <span class="skill-category">Educator & Teacher</span>
+                    <div class="skill-bar"><div class="skill-bar-fill" style="--fill-width: 95%"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PORTFOLIO SECTION ============ -->
+    <section class="section" id="portfolio">
+        <div class="container">
+            <span class="section-subtitle">My Projects</span>
+            <div class="portfolio-header">
+                <h2 class="section-title reveal">Featured Works</h2>
+            </div>
+            <div class="portfolio-filters reveal">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="music">DJ & Music</button>
+                <button class="filter-btn" data-filter="webdev">Web Dev</button>
+                <button class="filter-btn" data-filter="art">Digital Art</button>
+                <button class="filter-btn" data-filter="acting">Acting</button>
+                <button class="filter-btn" data-filter="education">Education</button>
+            </div>
+            <div class="portfolio-grid">
+                <!-- DJ & Music -->
+                <div class="portfolio-card glass reveal" data-category="music">
+                    <div class="portfolio-card-image">
+                        <img src="assets/images/dj_performance.jpg" alt="DJ Performance at Club Event" class="lightbox-trigger" loading="lazy">
+                        <div class="portfolio-card-overlay">
+                            <span>View Project</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <h3>Nightclub DJ Set</h3>
+                        <p>High-energy DJ performance, spinning EDM, Progressive, Trance, Breakbeat, and Dutch mixes.</p>
+                        <div class="portfolio-card-tags">
+                            <span class="portfolio-card-tag">EDM & Trance</span>
+                            <span class="portfolio-card-tag">Breakbeat & Dutch</span>
+                            <span class="portfolio-card-tag">Live DJ</span>
+                        </div>
+                    </div>
+
+                    </div>
+                                    <div class="portfolio-card glass reveal" data-category="music">
+                        <div class="portfolio-card-image">
+                            <img src="assets/images/dj_performance2.jpg" alt="DJ Performance at Club Event" class="lightbox-trigger" loading="lazy">
+                            <div class="portfolio-card-overlay">
+                                <span>View Project</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-content">
+                            <h3>Live DJ Performance</h3>
+                            <p>Seamless live mixes of Progressive, Dutch House, and Trance, delivering high-impact energy to the dancefloor.</p>
+                            <div class="portfolio-card-tags">
+                                <span class="portfolio-card-tag">EDM & Progressive</span>
+                                <span class="portfolio-card-tag">Trance & Dutch</span>
+                                <span class="portfolio-card-tag">Breakbeat</span>
+                            </div>
+                        </div>
+                     </div>
+
+                <!-- Web Dev -->
+                <div class="portfolio-card glass reveal" data-category="webdev">
+                    <div class="portfolio-card-image">
+                        <img src="assets/images/web_dev_preview.jpg" alt="Web Development Dashboard Project" class="lightbox-trigger" loading="lazy">
+                        <div class="portfolio-card-overlay">
+                            <span>View Project</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <h3>Class Analytics Dashboard</h3>
+                        <p>Modern educational management dashboard built with a robust Laravel backend and React frontend, featuring real-time analytics.</p>
+                        <div class="portfolio-card-tags">
+                            <span class="portfolio-card-tag">Laravel</span>
+                            <span class="portfolio-card-tag">React</span>
+                            <span class="portfolio-card-tag">Tailwind & MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Art 1 -->
+                <div class="portfolio-card glass reveal" data-category="art">
+                    <div class="portfolio-card-image">
+                        <img src="assets/images/procreate_art1.jpg" alt="Digital Illustration - Ethereal Forest" class="lightbox-trigger" loading="lazy">
+                        <div class="portfolio-card-overlay">
+                            <span>View Artwork</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <h3>Ethereal Forest</h3>
+                        <p>Mystical fantasy forest illustration featuring a glowing ethereal deer under moonlight. Created with Procreate.</p>
+                        <div class="portfolio-card-tags">
+                            <span class="portfolio-card-tag">Procreate</span>
+                            <span class="portfolio-card-tag">Fantasy</span>
+                            <span class="portfolio-card-tag">Illustration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Art 2 -->
+                <div class="portfolio-card glass reveal" data-category="art">
+                    <div class="portfolio-card-image">
+                        <img src="assets/images/procreate_art2.jpg" alt="Digital Illustration - Ocean Spirit" class="lightbox-trigger" loading="lazy">
+                        <div class="portfolio-card-overlay">
+                            <span>View Artwork</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <h3>Ocean Spirit</h3>
+                        <p>Underwater fantasy portrait with flowing ocean wave hair, bioluminescent jellyfish, and coral elements.</p>
+                        <div class="portfolio-card-tags">
+                            <span class="portfolio-card-tag">Procreate</span>
+                            <span class="portfolio-card-tag">Portrait</span>
+                            <span class="portfolio-card-tag">Digital</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Acting -->
+                <div class="portfolio-card glass reveal" data-category="acting">
+                    <div class="portfolio-card-image">
+                        <img src="assets/images/acting_still.jpg" alt="Theater Performance Still" class="lightbox-trigger" loading="lazy">
+                        <div class="portfolio-card-overlay">
+                            <span>View Production</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <h3>Stage Production</h3>
+                        <p>Active role as a playwright, director, and theater coach in theatrical dramatic stage productions.</p>
+                        <div class="portfolio-card-tags">
+                            <span class="portfolio-card-tag">Director & Playwright</span>
+                            <span class="portfolio-card-tag">Theater Coach</span>
+                            <span class="portfolio-card-tag">Drama</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="portfolio-card glass reveal" data-category="education">
+                    <div class="portfolio-card-image">
+                        <img src="assets/images/teaching_workshop.jpg" alt="Vocational Teaching Workshop" class="lightbox-trigger" loading="lazy">
+                        <div class="portfolio-card-overlay">
+                            <span>Learn More</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <h3>Indonesian Language Educator</h3>
+                        <p>Teaching Indonesian language at vocational high schools (SMK), developing literacy curricula, and coaching students in literary arts and public communication.</p>
+                        <div class="portfolio-card-tags">
+                            <span class="portfolio-card-tag">Indonesian Language</span>
+                            <span class="portfolio-card-tag">Vocational Educator</span>
+                            <span class="portfolio-card-tag">Literacy & Literature</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SERVICES SECTION ============ -->
+    <section class="section" id="services">
+        <div class="container">
+            <span class="section-subtitle">What I Offer</span>
+            <h2 class="section-title reveal">Services & Collaborations</h2>
+            <div class="services-grid">
+                <div class="service-card glass reveal">
+                    <div class="service-icon">🎧</div>
+                    <h3>DJ & Event Booking</h3>
+                    <p>Professional DJ services spinning EDM, Progressive, Trance, Breakbeat, Dutch, and more. Tailored mixes for clubs, festivals, and private events.</p>
+                </div>
+                <div class="service-card glass reveal">
+                    <div class="service-icon">💻</div>
+                    <h3>Laravel & Web Dev</h3>
+                    <p>Modern, high-performance web applications built with Laravel backend and React/Next.js frontends. Reliable, secure, and fully customized.</p>
+                </div>
+                <div class="service-card glass reveal">
+                    <div class="service-icon">🎨</div>
+                    <h3>Digital Illustration</h3>
+                    <p>Custom digital artwork created with Procreate — book covers, character designs, fantasy illustrations, portraits, and brand assets.</p>
+                </div>
+                <div class="service-card glass reveal">
+                    <div class="service-icon">🎭</div>
+                    <h3>Theater & Directing</h3>
+                    <p>Comprehensive playwriting services, theatrical directing, as well as theater coaching and acting performance training.</p>
+                </div>
+                <div class="service-card glass reveal">
+                    <div class="service-icon">📚</div>
+                    <h3>Education & Language</h3>
+                    <p>Indonesian language instruction for vocational high school students (SMK), literacy workshops, creative writing, and linguistic competency coaching.</p>
+                </div>
+                <div class="service-card glass reveal">
+                    <div class="service-icon">🤝</div>
+                    <h3>Creative Consulting</h3>
+                    <p>Strategic creative direction for brands, events, and projects. Combining my multidisciplinary expertise to bring your vision to life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT SECTION ============ -->
+    <section class="section" id="contact">
+        <div class="container">
+            <span class="section-subtitle">Get In Touch</span>
+            <h2 class="section-title reveal">Let's Work Together</h2>
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <p class="contact-description">
+                        Have a project in mind or want to collaborate? Feel free to send me a message.
+                        I'm always open to new opportunities and creative partnerships.
+                    </p>
+                    <div class="contact-info-item">
+                        <div class="contact-icon glass">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div>
+                            <span class="contact-label">Email</span>
+                            <a href="mailto:taofan.alfa@gmail.com" class="contact-value">taofan.alfa@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon glass">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div>
+                            <span class="contact-label">WhatsApp</span>
+                            <a href="https://wa.me/6287866950767" target="_blank" rel="noopener noreferrer" class="contact-value">+62 878-6695-0767</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon glass">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div>
+                            <span class="contact-label">Location</span>
+                            <span class="contact-value">Indonesia</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form glass reveal" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Your Name</label>
+                            <input type="text" id="name" class="form-input" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Your Email</label>
+                            <input type="email" id="email" class="form-input" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="service">Service Interested In</label>
+                        <select id="service" class="form-select">
+                            <option value="">Select a service...</option>
+                            <option value="dj">DJ & Event Booking</option>
+                            <option value="webdev">Custom Website Development</option>
+                            <option value="illustration">Digital Illustration</option>
+                            <option value="acting">Acting & Performance</option>
+                            <option value="workshop">Workshop & Training</option>
+                            <option value="consulting">Creative Consulting</option>
+                            <option value="other">Other / General Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="message">Your Message</label>
+                        <textarea id="message" class="form-textarea" rows="5" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-submit">
+                        Send Message
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo gradient-text">Alfa.</a>
+                    <p>Creative professional with a passion for music, education, storytelling, tech, and art.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-socials-section">
+                    <h4>Follow Me</h4>
+                    <div class="footer-socials">
+                        <a href="https://github.com/alfahidayat" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                        <a href="https://instagram.com/alfaraxiys" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="https://soundcloud.com/alfaraxiys" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 17.939h-1v-8.068c.308-.231.639-.429 1-.566v8.634zm-2 0h-1v-7.294c.308-.211.648-.389 1-.536v7.83zm-2 0h-1v-5.263c.196-.137.406-.257.634-.357l.366-.152v5.772zm-2 0h-1v-3.583c.258-.109.553-.207.852-.268l.148-.032v3.883zm14-8.939c-.148 0-.293.011-.438.024-.186-2.478-2.188-4.424-4.562-4.424-1.004 0-1.937.331-2.707.896l-.293.229v13.214h8c2.206 0 4-1.794 4-4s-1.794-4-4-4zm-8 8.939h-1v-8.891c.303-.257.625-.485 1-.665v9.556z"/></svg>
+                        </a>
+                        <a href="https://youtube.com/@alfaraxiys" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Alfa Hidayat. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ LIGHTBOX ============ -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
+        <img class="lightbox-content" id="lightboxImage" src="" alt="Full size image">
+    </div>
+
+    <!-- ============ TOAST NOTIFICATION ============ -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Message sent successfully! I'll get back to you soon.</span>
+        </div>
+    </div>
+
+    <!-- Google Translate API -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,id,es,ja,de,fr,zh-CN,ar,ko,pt,it,ru,nl,ms',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
