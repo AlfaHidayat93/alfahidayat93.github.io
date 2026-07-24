@@ -93,7 +93,10 @@ html {
 
 body {
     font-family: var(--font-body);
-    background-color: var(--bg-primary);
+    background:
+        radial-gradient(circle at top left, rgba(108, 99, 255, 0.12), transparent 20%),
+        radial-gradient(circle at bottom right, rgba(0, 212, 255, 0.1), transparent 22%),
+        var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.7;
     overflow-x: hidden;
@@ -226,7 +229,8 @@ ul {
 .glass:hover {
     background: var(--glass-bg-hover);
     border-color: var(--glass-border-hover);
-    box-shadow: 0 8px 40px rgba(108, 99, 255, 0.1);
+    box-shadow: 0 8px 40px rgba(108, 99, 255, 0.14);
+    transform: translateY(-2px);
 }
 
 /* ============ ANIMATIONS ============ */
@@ -566,7 +570,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 14px 32px;
+    padding: 14px 30px;
     border-radius: var(--border-radius-sm);
     font-family: var(--font-body);
     font-size: 0.95rem;
@@ -575,6 +579,7 @@ body {
     border: none;
     transition: var(--transition);
     white-space: nowrap;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.16);
 }
 
 .btn-primary {
@@ -684,11 +689,12 @@ body {
 .hero-subtitle {
     font-size: 1.3rem;
     color: var(--text-secondary);
-    margin-top: 140px;
+    margin-top: 16px;
     margin-bottom: 20px;
     min-height: 36px;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .typing-prefix {
@@ -763,9 +769,11 @@ body {
     height: min(50vw, 430px);
     aspect-ratio: 0.74;
     border-radius: 24px;
-    background: linear-gradient(135deg, rgba(108, 99, 255, 0.2) 0%, rgba(168, 85, 247, 0.1) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, rgba(108, 99, 255, 0.22) 0%, rgba(168, 85, 247, 0.12) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     overflow: hidden;
@@ -783,9 +791,18 @@ body {
     transform: translate(-50%, -50%);
     width: 180px;
     height: 180px;
-    background: radial-gradient(circle, rgba(108, 99, 255, 0.5) 0%, rgba(168, 85, 247, 0) 70%);
-    filter: blur(20px);
+    background: radial-gradient(circle, rgba(108, 99, 255, 0.55) 0%, rgba(168, 85, 247, 0) 70%);
+    filter: blur(24px);
     z-index: 1;
+    pointer-events: none;
+}
+
+.hero-card::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     pointer-events: none;
 }
 
@@ -814,7 +831,7 @@ body {
     -webkit-backdrop-filter: blur(20px);
     border-radius: 18px;
     padding: 16px 20px;
-    box-shadow: var(--glass-shadow);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
     z-index: 3;
     min-width: 140px;
     transition: var(--transition);
