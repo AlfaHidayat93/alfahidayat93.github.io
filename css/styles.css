@@ -642,7 +642,7 @@ body {
 
 .hero-container {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     gap: 60px;
     width: min(100%, var(--container-max));
@@ -759,16 +759,16 @@ body {
     padding: 20px;
     z-index: 5;
     align-self: flex-end;
-    margin-bottom: -40px;
-    width: min(100%, 420px);
+    margin: 0 0 -20px auto;
+    width: min(100%, 340px);
 }
 
 .hero-card {
     position: relative;
-    width: min(38vw, 320px);
-    height: min(50vw, 430px);
-    aspect-ratio: 0.74;
-    border-radius: 24px;
+    width: min(28vw, 260px);
+    height: min(42vw, 360px);
+    aspect-ratio: 0.72;
+    border-radius: 22px;
     background: linear-gradient(135deg, rgba(108, 99, 255, 0.22) 0%, rgba(168, 85, 247, 0.12) 100%);
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow:
@@ -789,10 +789,10 @@ body {
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     background: radial-gradient(circle, rgba(108, 99, 255, 0.55) 0%, rgba(168, 85, 247, 0) 70%);
-    filter: blur(24px);
+    filter: blur(20px);
     z-index: 1;
     pointer-events: none;
 }
@@ -1586,8 +1586,7 @@ a.contact-value:hover {
 
     .hero-container {
         flex-direction: column;
-        text-align: center;
-        gap: 32px;
+        align-items: center;
     }
 
     .hero-content {
@@ -1605,9 +1604,14 @@ a.contact-value:hover {
     }
 
     .hero-image-wrapper {
-        width: min(100%, 380px);
+        width: min(100%, 320px);
         margin: 0 auto;
         align-self: center;
+    }
+
+    .hero-card {
+        width: min(56vw, 250px);
+        height: min(74vw, 340px);
     }
 }
 
@@ -1684,9 +1688,9 @@ a.contact-value:hover {
     }
 
     .hero-card {
-        width: min(78vw, 260px);
-        height: auto;
-        aspect-ratio: 0.74;
+        width: min(70vw, 220px);
+        height: min(92vw, 300px);
+        aspect-ratio: 0.72;
     }
 
     .hero-card-img {
@@ -1802,7 +1806,8 @@ a.contact-value:hover {
     }
 
     .hero-card {
-        width: min(74vw, 220px);
+        width: min(72vw, 200px);
+        height: min(93vw, 280px);
     }
 
     .hero-badge-left {
