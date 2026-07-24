@@ -1621,6 +1621,12 @@ a.contact-value:hover {
         --section-padding: 70px 0;
     }
 
+    .hero {
+        min-height: auto;
+        padding-top: 88px;
+        padding-bottom: 40px;
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
@@ -1655,28 +1661,33 @@ a.contact-value:hover {
     }
 
     .hero-container {
-        flex-direction: column-reverse;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
-        gap: 40px;
+        gap: 24px;
     }
 
     .hero-image-wrapper {
+        order: 2;
         align-self: center;
-        margin-bottom: 0;
-        width: min(100%, 320px);
+        margin: 0 auto;
+        width: min(100%, 260px);
+        padding: 12px;
     }
 
     .hero-content {
+        order: 1;
         max-width: 100%;
     }
 
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 2.1rem;
+        line-height: 1.18;
     }
 
     .hero-subtitle {
         justify-content: center;
-        margin-top: 20px;
+        margin-top: 12px;
     }
 
     .hero-cta {
@@ -1688,8 +1699,8 @@ a.contact-value:hover {
     }
 
     .hero-card {
-        width: min(70vw, 220px);
-        height: min(92vw, 300px);
+        width: min(68vw, 210px);
+        height: min(88vw, 285px);
         aspect-ratio: 0.72;
     }
 
@@ -1699,16 +1710,17 @@ a.contact-value:hover {
     }
 
     .hero-badge-left {
-        left: -8px;
-        bottom: -10px;
-        min-width: 110px;
+        left: -6px;
+        bottom: -12px;
+        min-width: 100px;
+        padding: 10px 12px;
     }
 
     .hero-badge-right {
-        right: -8px;
-        bottom: 22px;
-        width: 50px;
-        height: 50px;
+        right: -6px;
+        bottom: 18px;
+        width: 46px;
+        height: 46px;
     }
 
     .hero-image-border {
@@ -1835,6 +1847,10 @@ a.contact-value:hover {
     .hero-cta {
         flex-direction: column;
         align-items: center;
+    }
+
+    .hero-socials {
+        flex-wrap: wrap;
     }
 
     .btn {
