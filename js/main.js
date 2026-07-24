@@ -57,8 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const handleScroll = () => {
         if (window.scrollY > 100) {
             nav?.classList.add('scrolled');
+            document.body.classList.add('scrolled-bg');
         } else {
             nav?.classList.remove('scrolled');
+            document.body.classList.remove('scrolled-bg');
         }
     };
 

@@ -94,19 +94,46 @@ html {
 body {
     font-family: var(--font-body);
     background-color: var(--bg-primary);
-    background-image: linear-gradient(rgba(10, 10, 26, 0.85), rgba(10, 10, 26, 0.95)), url('../assets/images/hero_dark.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
     color: var(--text-primary);
     line-height: 1.7;
     overflow-x: hidden;
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-[data-theme="light"] body {
-    background-image: linear-gradient(rgba(248, 250, 252, 0.85), rgba(248, 250, 252, 0.95)), url('../assets/images/hero_light.jpg');
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../assets/images/hero_dark.jpg');
+    background-size: cover;
+    background-position: 80% center;
+    background-repeat: no-repeat;
+    z-index: -2;
+    transition: background-image 0.4s ease;
+}
+
+[data-theme="light"] body::before {
+    background-image: url('../assets/images/hero_light.jpg');
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-primary);
+    opacity: 0.1;
+    z-index: -1;
+    transition: opacity 0.8s ease;
+}
+
+body.scrolled-bg::after {
+    opacity: 0.95;
 }
 
 body.no-scroll {
@@ -612,6 +639,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: row-reverse;
     gap: 60px;
 }
 
