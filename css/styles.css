@@ -94,10 +94,19 @@ html {
 body {
     font-family: var(--font-body);
     background-color: var(--bg-primary);
+    background-image: linear-gradient(rgba(10, 10, 26, 0.85), rgba(10, 10, 26, 0.95)), url('../images/hero_dark.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: var(--text-primary);
     line-height: 1.7;
     overflow-x: hidden;
     transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+[data-theme="light"] body {
+    background-image: linear-gradient(rgba(248, 250, 252, 0.85), rgba(248, 250, 252, 0.95)), url('../images/hero_light.jpg');
 }
 
 body.no-scroll {
@@ -570,17 +579,9 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-image: linear-gradient(rgba(10, 10, 26, 0.7), rgba(10, 10, 26, 0.85)), url('../images/hero_dark.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     padding-top: 80px;
     overflow: hidden;
     position: relative;
-}
-
-[data-theme='light'] .hero {
-    background-image: linear-gradient(rgba(248, 250, 252, 0.75), rgba(248, 250, 252, 0.85)), url('../images/hero_light.jpg');
 }
 
 .hero::before {
