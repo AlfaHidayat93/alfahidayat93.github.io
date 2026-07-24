@@ -51,7 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.getElementById('navbar');
     const navLinks = document.getElementById('navLinks');
     const navToggle = document.getElementById('navToggle');
+    const navBackdrop = document.getElementById('navBackdrop');
     const navLinkItems = document.querySelectorAll('.nav-links a');
+
+    const setNavOpen = (open) => {
+        navLinks?.classList.toggle('active', open);
+        navToggle?.classList.toggle('active', open);
+        document.body.classList.toggle('nav-open', open);
+        if (navBackdrop) {
+            navBackdrop.hidden = !open;
+        }
+    };
 
     // Sticky nav on scroll
     const handleScroll = () => {
@@ -69,15 +79,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mobile nav toggle
     navToggle?.addEventListener('click', () => {
-        navLinks?.classList.toggle('active');
-        navToggle.classList.toggle('active');
+        const willOpen = !navLinks?.classList.contains('active');
+        setNavOpen(willOpen);
+    });
+
+    navBackdrop?.addEventListener('click', () => {
+        setNavOpen(false);
     });
 
     // Close mobile nav on link click
     navLinkItems.forEach(link => {
         link.addEventListener('click', () => {
-            navLinks?.classList.remove('active');
-            navToggle?.classList.remove('active');
+            setNavOpen(false);
         });
     });
 
@@ -86,8 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (navLinks?.classList.contains('active') &&
             !navLinks.contains(e.target) &&
             !navToggle?.contains(e.target)) {
-            navLinks.classList.remove('active');
-            navToggle?.classList.remove('active');
+            setNavOpen(false);
         }
     });
 
@@ -375,7 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroSection = document.querySelector('.hero');
     const heroImageWrapper = document.querySelector('.hero-image-wrapper');
 
-    if (heroSection && heroImageWrapper) {
+    if (heroSection && heroImageWrapper && window.matchMedia('(hover: hover) and (min-width: 1025px)').matches) {
         let ticking = false;
 
         heroSection.addEventListener('mousemove', (e) => {
